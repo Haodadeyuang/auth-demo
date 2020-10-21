@@ -14,6 +14,7 @@ public class User implements Serializable {
     private String user_password;
     private String user_email;
     private Integer role_id;
+    private String user_salt;
 
     public Integer getUser_id() {
         return user_id;
@@ -55,13 +56,20 @@ public class User implements Serializable {
         this.role_id = role_id;
     }
 
+    public String getUser_salt() {
+        return user_salt;
+    }
+
+    public void setUser_salt(String user_salt) {
+        this.user_salt = user_salt;
+    }
+
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "User{" +
                 "user_id=" + user_id +
                 ", name='" + user_name + '\'' +
-                ", email='" + user_email +'\''+
+                ", email='" + user_email + '\'' +
                 '}';
     }
 }
