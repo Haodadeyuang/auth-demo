@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @description:
@@ -103,6 +105,36 @@ public class UserDaoImpl implements IUserDao {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             return false;
+        }
+    }
+
+    @Override
+    public String getSalt(Integer user_id, String user_name) {
+        try(Connection con=DbconUtil.getConnection())
+        {
+            String sql="select user_salt from user where user_id= ? or user_name=?";
+            PreparedStatement p=con.prepareStatement(sql);
+            p.setObject(1,user_id);
+            p.setObject(2,user_name);
+            ResultSet res=p.executeQuery();
+            List<String> c=new LinkedList<>();
+            while(res.next())
+            {
+                String salt=res.getString(1);
+                c.add(salt);
+            }
+            if(c.size()==1)
+            {
+                return c.remove(0);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return null;
         }
     }
 }

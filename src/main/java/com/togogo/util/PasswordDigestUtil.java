@@ -2,6 +2,7 @@ package com.togogo.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Random;
 
 /**
  * @description:
@@ -10,7 +11,15 @@ import java.security.NoSuchAlgorithmException;
  */
 public class PasswordDigestUtil {
     public static String Digest(String password, String salt) throws NoSuchAlgorithmException {
-        return Encryption(password+salt);
+        return Encryption(password + salt);
+    }
+
+    public static String getSalt() {
+        StringBuilder salt = new StringBuilder(15);
+        for (int i = 0; i < 10; i++) {
+            salt.append((char) (new Random().nextInt(95) + 32));
+        }
+        return salt.toString();
     }
 
     private static String Encryption(String source) throws NoSuchAlgorithmException {

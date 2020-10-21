@@ -2,6 +2,8 @@ package com.togogo.dao;
 
 import com.togogo.domain.User;
 
+import java.util.List;
+
 public interface IUserDao {
     /**
      * 查询用户，只能根据ID或者用户名其中之一再加上密码的形式
@@ -28,5 +30,8 @@ public interface IUserDao {
                     String user_name,
                     String user_password);
 
-
+    /**
+     * 查找用户对应的salt
+     */
+    String getSalt(Integer user_id, String user_name);
 }
