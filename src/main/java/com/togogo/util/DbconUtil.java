@@ -12,34 +12,32 @@ import java.util.Properties;
  */
 public class DbconUtil {
 
-        private static Connection con;
-        private static String driverClass;
-        private static String url;
-        private static String user;
-        private static String password;
+    private static Connection con;
+    private static String driverClass;
+    private static String url;
+    private static String user;
+    private static String password;
 
-        static{
-            try {
-                readConfig();
-                Class.forName(driverClass);
-                con = DriverManager.getConnection(url, user, password);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+    private static void readConfig() throws Exception {
+        InputStream in = DbconUtil.class.getClassLoader().getResourceAsStream("db" +
+                ".properties");
+        Properties pro = new Properties();
+        pro.load(in);
+        driverClass = pro.getProperty("JDBC_DRIVERCLASS");
+        url = pro.getProperty("JDBC_URL");
+        user = pro.getProperty("JDBC_USER");
+        password = pro.getProperty("JDBC_PASSWORD");
+    }
 
-        private static void readConfig() throws Exception{
-            InputStream in = DbconUtil.class.getClassLoader().getResourceAsStream("database.properties");
-            Properties pro = new Properties();
-            pro.load(in);
-            driverClass = pro.getProperty("JDBC_DRIVERCLASS");
-            url = pro.getProperty("JDBC_URL");
-            user = pro.getProperty("JDBC_USER");
-            password = pro.getProperty("JDBC_PASSWORD");
-
+    public static Connection getConnection() {
+        try {
+            readConfig();
+            Class.forName(driverClass);
+            con = DriverManager.getConnection(url, user, password);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        public static Connection getConnection(){
-            return con;
-        }
+        return con;
+    }
 
 }
