@@ -6,6 +6,6 @@ class DbconUtilTest {
 
     @Test
     void getConnection() {
-        System.out.println(DbconUtil.getConnection());
+        System.out.println(HikariDataSourceUtil.getConnection());
     }
 }
