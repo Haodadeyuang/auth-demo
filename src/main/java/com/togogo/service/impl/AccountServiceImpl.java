@@ -6,7 +6,7 @@ import com.togogo.service.IAccountService;
 import java.sql.Connection;
 import java.util.List;
 
-import com.togogo.util.DbconUtil;
+import com.togogo.util.HikariDataSourceUtil;
 
 /**
  * @description:
@@ -17,7 +17,7 @@ public class AccountServiceImpl implements IAccountService {
 
     @Override
     public List<Account> findAllAccount() {
-        Connection con = DbconUtil.getConnection();
+        Connection con = HikariDataSourceUtil.getConnection();
         if (con != null) {
             System.out.println(con.toString());
         }

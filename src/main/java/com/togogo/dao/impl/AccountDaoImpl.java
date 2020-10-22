@@ -2,19 +2,18 @@ package com.togogo.dao.impl;
 
 import com.togogo.dao.IAccountDao;
 import com.togogo.domain.Account;
-import com.togogo.util.DbconUtil;
+import com.togogo.util.HikariDataSourceUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 public class AccountDaoImpl implements IAccountDao {
 
     @Override
     public List<Account> findAllAccount() {
-        try(Connection con=DbconUtil.getConnection();)
+        try(Connection con= HikariDataSourceUtil.getConnection();)
         {
             PreparedStatement p=con.prepareStatement("select money from account where name = ?");
             p.setObject(1,"aaa");

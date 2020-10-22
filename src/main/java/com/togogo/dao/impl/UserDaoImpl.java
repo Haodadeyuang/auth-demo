@@ -1,8 +1,7 @@
 package com.togogo.dao.impl;
 
 import com.togogo.dao.IUserDao;
-import com.togogo.domain.User;
-import com.togogo.util.DbconUtil;
+import com.togogo.util.HikariDataSourceUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,7 +20,7 @@ public class UserDaoImpl implements IUserDao {
 
     @Override
     public boolean findUser(Integer user_id, String user_name, String user_password) {
-        try (Connection con = DbconUtil.getConnection()) {
+        try (Connection con = HikariDataSourceUtil.getConnection()) {
             String sql =
                     "select user_id from user where (user_id=? or user_name=?) and " +
                             "user_password=?";
@@ -52,7 +51,7 @@ public class UserDaoImpl implements IUserDao {
     @Override
     public Boolean addUser(String user_name, String user_password, String user_email,
                            Integer role_id,String user_salt) {
-        try (Connection con = DbconUtil.getConnection()) {
+        try (Connection con = HikariDataSourceUtil.getConnection()) {
             String sql =
                     "insert into user values(null,?,?,?,?,?)";
             PreparedStatement p=con.prepareStatement(sql);
@@ -78,7 +77,7 @@ public class UserDaoImpl implements IUserDao {
 
     @Override
     public Boolean updateUser(Integer user_id, String user_name, String user_password) {
-        try (Connection con = DbconUtil.getConnection()) {
+        try (Connection con = HikariDataSourceUtil.getConnection()) {
             String sql;
             if(user_password==null)
             {
@@ -110,7 +109,7 @@ public class UserDaoImpl implements IUserDao {
 
     @Override
     public String getSalt(Integer user_id, String user_name) {
-        try(Connection con=DbconUtil.getConnection())
+        try(Connection con=HikariDataSourceUtil.getConnection())
         {
             String sql="select user_salt from user where user_id= ? or user_name=?";
             PreparedStatement p=con.prepareStatement(sql);

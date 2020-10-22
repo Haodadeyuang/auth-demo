@@ -1,11 +1,13 @@
 package com.togogo.servlet;
 
 import com.togogo.service.impl.CheckServiceImpl;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,21 +24,23 @@ public class IndexAuthServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html");
         String name = req.getParameter("name");
-        String password=req.getParameter("password");
+        String password = req.getParameter("password");
         PrintWriter pw = resp.getWriter();
-        if(new CheckServiceImpl().checkLogin(null,name,password))
-        {
+        if (new CheckServiceImpl().checkLogin(null, name, password)) {
             pw.write("<h1>Hello, " + name + "!</h1>");
-        }
-        else
-        {
-            pw.write("<h1>fuck off, " + name + ','+password+"!</h1>");
+            // 获取session传过来的值
+            ServletContext ctx = getServletContext();
+            int t = (Integer) ctx.getAttribute("onlineNumber");
+            pw.write("当前在线人数：" + t);
+        } else {
+            pw.write("<h1>fuck off, " + name + ',' + password + "!</h1>");
         }
         pw.flush();
     }
+
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        doPost(req,resp);
+        doPost(req, resp);
     }
 
 }

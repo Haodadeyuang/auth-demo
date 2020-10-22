@@ -16,10 +16,10 @@ public class CheckServiceImpl implements ICheckService {
 
     @Override
     public boolean checkRegister(String name, String password, String email, Integer roleID) {
-        String salt=PasswordDigestUtil.getSalt();
+        String salt = PasswordDigestUtil.getSalt();
         try {
-            String digest=PasswordDigestUtil.Digest(password,salt);
-            return new UserDaoImpl().addUser(name,digest,email,roleID,salt);
+            String digest = PasswordDigestUtil.Digest(password, salt);
+            return new UserDaoImpl().addUser(name, digest, email, roleID, salt);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
             return false;
@@ -29,14 +29,13 @@ public class CheckServiceImpl implements ICheckService {
     @Override
     public boolean checkLogin(Integer id, String name, String password) {
         String salt = new UserDaoImpl().getSalt(id, name);
-        System.out.println(salt);
+
         if (salt == null) {
             return false;
-        } else
-        {
+        } else {
             try {
-                password=PasswordDigestUtil.Digest(password,salt);
-                return new UserDaoImpl().findUser(id,name,password);
+                password = PasswordDigestUtil.Digest(password, salt);
+                return new UserDaoImpl().findUser(id, name, password);
             } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
                 return false;
