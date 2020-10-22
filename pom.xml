@@ -42,6 +42,12 @@
       <version>8.0.21</version>
     </dependency>
 
+    <!-- HikariCP连接池 -->
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>2.7.1</version>
+    </dependency>
 
   </dependencies>
 
