@@ -30,7 +30,6 @@ public class IndexAuthServlet extends HttpServlet {
             pw.write("<h1>Hello, " + name + "!</h1>");
             // 获取session传过来的值
             ServletContext ctx = getServletContext();
-            System.out.println(1999999);
             Object t = ctx.getAttribute("onlineNumber");
             pw.write("当前在线人数：" + t);
         } else {
