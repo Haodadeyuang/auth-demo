@@ -7,6 +7,9 @@ import jakarta.servlet.annotation.WebListener;
 import jakarta.servlet.http.HttpSessionEvent;
 import jakarta.servlet.http.HttpSessionListener;
 
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+
 /**
  * @description:
  * @author: Haodadeyu
@@ -16,17 +19,17 @@ import jakarta.servlet.http.HttpSessionListener;
 public class OnlineNumberListener implements HttpSessionListener {
     // 在此初始化WebApp,例如打开数据库连接池等:
     ServletContext ctx = null;
-    static int current = 0;
+    static AtomicInteger current=new AtomicInteger(0);
+
     public void sessionCreated(HttpSessionEvent e) {
-        current++;
+        current.incrementAndGet();
         ctx = e.getSession().getServletContext();
         ctx.setAttribute("onlineNumber", current);
-
     }
 
     public void sessionDestroyed(HttpSessionEvent e) {
-        current--;
-        ctx.setAttribute("currentusers", current);
+        current.decrementAndGet();
+        ctx.setAttribute("onlineNumber", current);
     }
 
 }
