@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 @WebListener
 public class OnlineNumberListener implements HttpSessionListener {
-    // 在此初始化WebApp,例如打开数据库连接池等:
+    // 在此初始化WebApp
     ServletContext ctx = null;
     static AtomicInteger current=new AtomicInteger(0);
 

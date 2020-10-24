@@ -1,0 +1,23 @@
+{
+  "FLAG": 1,
+  "NAME": "example",
+  "ARRAYS":
+  [
+    {
+      "Name":       "array1",
+      "String":     "哈哈哒1"
+    },
+    {
+      "Name":       "array2",
+      "String":     "哈哈哒2"
+    },
+    {
+      "Name":       "array3",
+      "String":     "哈哈哒3"
+    },
+    {
+      "Name":       "array4",
+      "String":     "哈哈哒4"
+    }
+  ]
+}

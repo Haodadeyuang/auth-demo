@@ -85,7 +85,11 @@ layui.define(['element', 'layer', 'form'], function (exports) {
         loginHtml += '<input type="password" name="password" lay-verify="passWord" placeholder="请输入密码"  autocomplete="off" class="layui-input">';
         loginHtml += '</div>';
         loginHtml += '</div>';
-
+        loginHtml += '<div class="layui-form-item" style="margin-top:25px;margin-bottom:0;">';
+        loginHtml += '<div class="layui-input-block">';
+        loginHtml += ' <button class="layui-btn" style="width:230px;" lay-submit="" lay-filter="login">立即登录</button>';
+        loginHtml += ' </div>';
+        loginHtml += ' </div>';
         loginHtml += '<div class="layui-form-item" style="margin-top:25px;margin-bottom:0;">';
         loginHtml += '<div class="layui-input-block">';
         loginHtml += ' <button class="layui-btn" style="width:230px;" lay-submit="" lay-filter="login">立即登录</button>';
