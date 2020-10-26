@@ -1,19 +1,18 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  <!-- 对非保护目录下的jsp文件进行后缀隐藏,视为Servlet -->
- <servlet>
-   <servlet-name>IndexServlet</servlet-name>
-   <jsp-file>/index.jsp</jsp-file>
- </servlet>
-  <servlet-mapping>
-    <servlet-name>IndexServlet</servlet-name>
-    <url-pattern>/index</url-pattern>
-  </servlet-mapping>
-
+    <display-name>Archetype Created Web Application</display-name>
+    <!-- 对非保护目录下的jsp文件进行后缀隐藏,视为Servlet -->
+    <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>
