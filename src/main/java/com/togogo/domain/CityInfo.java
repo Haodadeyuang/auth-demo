@@ -8,6 +8,7 @@ package com.togogo.domain;
 public class CityInfo {
     private String city_name;
     private Integer city_code;
+    private String city_province;
 
     public String getCity_name() {
         return city_name;
@@ -23,6 +24,14 @@ public class CityInfo {
 
     public void setCity_code(Integer city_code) {
         this.city_code = city_code;
+    }
+
+    public String getCity_province() {
+        return city_province;
+    }
+
+    public void setCity_province(String city_province) {
+        this.city_province = city_province;
     }
 
 

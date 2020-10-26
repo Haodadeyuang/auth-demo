@@ -2,7 +2,6 @@ package com.togogo.servlet;
 
 import com.togogo.service.impl.CheckServiceImpl;
 import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,17 +17,20 @@ import java.io.IOException;
  */
 @WebServlet(urlPatterns = "/checkLogin")
 public class CheckLoginServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
-    {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html");
         String name = req.getParameter("name");
         String password = req.getParameter("password");
+        System.out.println(name+password);
         if (new CheckServiceImpl().checkLogin(null, name, password)) {
             /**
              * 请求转发的方式，前台jsp需要经过身份认证，不允许直接访问(也不允许重定向)
+             * 身份认证成功，在这里获取一些基本信息存入session后再进行请求转发
+             * 例如用户城市代码
+             * 注意：绝对不允许把User类的字段存入session
              */
             RequestDispatcher dispatcher =
-                    req.getRequestDispatcher("WEB-INF/auth.jsp");    // 使用req对象获取RequestDispatcher对象
+                    req.getRequestDispatcher("WEB-INF/auth.jsp");
             try {
                 dispatcher.forward(req, resp);
             } catch (ServletException e) {
@@ -38,8 +40,8 @@ public class CheckLoginServlet extends HttpServlet {
             resp.sendRedirect("loginFailed.jsp");
         }
     }
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException
-    {
+
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         doPost(req, resp);
     }
 }

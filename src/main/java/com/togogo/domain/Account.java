@@ -5,6 +5,7 @@ package com.togogo.domain;
  * @author: Haodadeyu
  * @time: 2020/10/13 23:14
  */
+
 import java.io.Serializable;
 
 public class Account implements Serializable {

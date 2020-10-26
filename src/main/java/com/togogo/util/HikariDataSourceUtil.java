@@ -24,8 +24,7 @@ public class HikariDataSourceUtil {
     private HikariDataSourceUtil() {
     }
 
-    public static Connection getConnection()
-    {
+    public static Connection getConnection() {
         try {
             return ds.getConnection();
         } catch (SQLException throwables) {

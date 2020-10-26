@@ -21,7 +21,7 @@ import java.sql.SQLException;
 public class CityInfoDaoImpl implements ICityInfoDAO {
 
     @Override
-    public Integer getCityCode(String cityName,String provinceName) {
+    public Integer getCityCode(String cityName, String provinceName) {
         try (Connection con = HikariDataSourceUtil.getConnection()) {
             String sql = "select city_code from cityinfo where city_name=? and " +
                     "city_province=?";
@@ -29,7 +29,7 @@ public class CityInfoDaoImpl implements ICityInfoDAO {
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             p.setObject(1, cityName);
-            p.setObject(2,provinceName);
+            p.setObject(2, provinceName);
             try (ResultSet res = p.executeQuery()) {
                 res.last();
                 if (res.getRow() == 1) {
@@ -55,7 +55,7 @@ public class CityInfoDaoImpl implements ICityInfoDAO {
                             new JsonArray()));
             for (Object x : CityCodeArray) {
                 JSONObject AreaObj = (JSONObject) x;
-                p.setObject(3,AreaObj.getString("省"));
+                p.setObject(3, AreaObj.getString("省"));
                 for (Object y : AreaObj.getJSONArray("市")) {
                     JSONObject f = (JSONObject) y;
                     p.setObject(1, f.getString("市名"));
@@ -67,6 +67,50 @@ public class CityInfoDaoImpl implements ICityInfoDAO {
         } catch (SQLException | NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+
+    @Override
+    public String getProvince(Integer cityCode) {
+        try (Connection con = HikariDataSourceUtil.getConnection()) {
+            String sql = "select city_province from cityinfo where city_code=?";
+            PreparedStatement p = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            p.setObject(1, cityCode);
+            try (ResultSet res = p.executeQuery()) {
+                res.last();
+                if (res.getRow() == 1) {
+                    return res.getString(1);
+                } else {
+                    return null;
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public String getCity(Integer cityCode) {
+        try (Connection con = HikariDataSourceUtil.getConnection()) {
+            String sql = "select city_name from cityinfo where city_code=?";
+            PreparedStatement p = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            p.setObject(1, cityCode);
+            try (ResultSet res = p.executeQuery()) {
+                res.last();
+                if (res.getRow() == 1) {
+                    return res.getString(1);
+                } else {
+                    return null;
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

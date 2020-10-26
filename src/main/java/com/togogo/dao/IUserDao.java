@@ -8,7 +8,7 @@ public interface IUserDao {
     /**
      * 查询用户，只能根据ID或者用户名其中之一再加上密码的形式
      */
-    boolean findUser(Integer user_id,String user_name,String user_password);
+    boolean findUser(Integer user_id, String user_name, String user_password);
 
     /**
      * 添加用户
@@ -27,8 +27,8 @@ public interface IUserDao {
      * 更新用户，只能修改用户名或者密码
      */
     Boolean updateUser(Integer user_id,
-                    String user_name,
-                    String user_password);
+                       String user_name,
+                       String user_password);
 
     /**
      * 查找用户对应的salt

@@ -13,19 +13,15 @@ public class AccountDaoImpl implements IAccountDao {
 
     @Override
     public List<Account> findAllAccount() {
-        try(Connection con= HikariDataSourceUtil.getConnection();)
-        {
-            PreparedStatement p=con.prepareStatement("select money from account where name = ?");
-            p.setObject(1,"aaa");
-            ResultSet rs= p.executeQuery();
-            while(rs.next())
-            {
-                Float money=rs.getFloat("money");
+        try (Connection con = HikariDataSourceUtil.getConnection();) {
+            PreparedStatement p = con.prepareStatement("select money from account where name = ?");
+            p.setObject(1, "aaa");
+            ResultSet rs = p.executeQuery();
+            while (rs.next()) {
+                Float money = rs.getFloat("money");
                 System.out.println(money);
             }
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
