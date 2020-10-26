@@ -8,11 +8,11 @@ class CheckServiceImplTest {
 
     @Test
     void checkRegister() {
-        new CheckServiceImpl().checkRegister("鸡米饭","abc","w2u",1);
+        new CheckServiceImpl().checkRegister("鸡米饭", "abc", "w2u", 1);
     }
 
     @Test
     void checkLogin() {
-        System.out.println(new CheckServiceImpl().checkLogin(null,"鸡米饭","abc"));
+        System.out.println(new CheckServiceImpl().checkLogin(null, "鸡米饭", "abc"));
     }
 }

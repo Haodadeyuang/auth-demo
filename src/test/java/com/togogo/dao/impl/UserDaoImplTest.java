@@ -9,16 +9,16 @@ class UserDaoImplTest {
 
     @Test
     void addUser() {
-        new UserDaoImpl().addUser("我爱大米饭","123","321",124,"123");
+        new UserDaoImpl().addUser("我爱大米饭", "123", "321", 124, "123");
     }
 
     @Test
     void updateUser() {
-        new UserDaoImpl().updateUser(1,"你爱大米饭","wanboliqiu");
+        new UserDaoImpl().updateUser(1, "你爱大米饭", "wanboliqiu");
     }
 
     @Test
     void findUser() {
-        System.out.println(new UserDaoImpl().findUser(1,null,"123"));
+        System.out.println(new UserDaoImpl().findUser(1, null, "123"));
     }
 }

@@ -11,7 +11,7 @@ class PasswordDigestUtilTest {
     @Test
     void digest() {
         try {
-            System.out.println(PasswordDigestUtil.Digest("abc1","23"));
+            System.out.println(PasswordDigestUtil.Digest("abc1", "23"));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
