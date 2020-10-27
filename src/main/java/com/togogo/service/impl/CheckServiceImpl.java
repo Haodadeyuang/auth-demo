@@ -42,4 +42,9 @@ public class CheckServiceImpl implements ICheckService {
             }
         }
     }
+
+    @Override
+    public boolean checkUserName(String name) {
+        return !(new UserDaoImpl().isExistsUserName(name));
+    }
 }

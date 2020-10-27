@@ -14,5 +14,7 @@
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
 
+    <!-- jsp文件配置-->
+
 
 </web-app>

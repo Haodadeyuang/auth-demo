@@ -70,20 +70,17 @@
                     <p class="mt5 mb20">Login to access your account.</p>
                     <input type="text" name="name" autocomplete="off"
                            class="form-control uname"
-                           onblur="checkuser()"
                            placeholder="Username"/>
                     <input type="password" name="password" autocomplete="off"
                            class="form-control pword"
                            placeholder="Password"/>
-                    <a href=""><small>Forgot Your Password?</small></a>
+                    <!-- <a href=""><small>Forgot Your Password?</small></a> -->
                     <button class="btn btn-success btn-block">Sign In</button>
                 </form>
             </div><!-- col-sm-5 -->
         </div><!-- row -->
         <div class="signup-footer">
-            <div id="myAlert" class="alert alert-warning" style="visibility:hidden;">
-                用户名<strong>已存在或含有敏感词汇</strong>，请重新选择其它用户名。
-            </div>
+
             <div class="pull-left">
             </div>
             <div class="pull-right">
@@ -108,37 +105,7 @@
 <script src="resources/js/retina.min.js"></script>
 <script src="resources/js/custom.js"></script>
 <script>
-    var xmlhttp;
-    function checkuser() {
-        var value = document.getElementsByName("name").value;
-        //兼容性写法创建请求实例,IE5 6支持else里面的方法
-        if (window.XMLHttpRequest) {
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        //设置传送方式,地址,以及同步还是异步
-        xmlhttp.open("GET", "/checkUserName?value=" + escape(value), true);
-        xmlhttp.onreadystatechange = callback;//状态改变的时候执行这个函数,用来判断是否请求完毕
-        xmlhttp.send();//请求服务器
-    }
 
-    /**
-     * 用户名检测回调函数
-     */
-    function setHidden()
-    {
-        $("#myAlert").attr("style", "visibility:hidden;");
-    }
-    function callback() {
-        //请求完成表示
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            if (xmlhttp.responseText) {//这里直接判断不为空,应该根据数据库返回值来进行不同的显示
-                $("#myAlert").attr("style", "visibility:visible;");
-                setTimeout("setHidden()",2500);
-            }
-        }
-    }
 
     jQuery(document).ready(function () {
         // Please do not use the code below

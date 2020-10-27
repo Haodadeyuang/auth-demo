@@ -18,7 +18,10 @@ public interface IUserDao {
                     String user_email,
                     Integer role_id,
                     String user_salt);
-
+    /**
+     * 查找用户名是否存在
+     */
+    Boolean isExistsUserName(String user_name);
     /**
      * 删除用户，不支持
      */

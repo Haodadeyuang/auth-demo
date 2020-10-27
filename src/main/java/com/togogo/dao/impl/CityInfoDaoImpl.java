@@ -8,10 +8,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.lang.reflect.InvocationTargetException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @description:
@@ -19,6 +18,31 @@ import java.sql.SQLException;
  * @time: 2020/10/25 10:14
  */
 public class CityInfoDaoImpl implements ICityInfoDAO {
+
+    @Override
+    public List<String> getAllCityInfo() {
+        try(Connection con=HikariDataSourceUtil.getConnection())
+        {
+            String sql="select city_name from cityinfo;";
+            PreparedStatement p = con.prepareStatement(sql);
+            try(ResultSet res=p.executeQuery())
+            {
+                List<String> C=new LinkedList<>();
+                while(res.next())
+                {
+                    C.add(res.getString(1));
+                }
+                return C;
+            }
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
 
     @Override
     public Integer getCityCode(String cityName, String provinceName) {

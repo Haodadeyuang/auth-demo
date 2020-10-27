@@ -5,5 +5,6 @@ public interface ICheckService {
 
     boolean checkLogin(Integer id, String name, String password);
 
+    boolean checkUserName(String name);
 
 }

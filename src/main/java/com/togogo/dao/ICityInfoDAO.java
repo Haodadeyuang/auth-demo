@@ -1,6 +1,13 @@
 package com.togogo.dao;
 
+import java.util.List;
+
 public interface ICityInfoDAO {
+    /**
+     * 获取全部城市名
+     */
+    List<String> getAllCityInfo();
+
     /**
      * 根据城市名获取城市ID
      *

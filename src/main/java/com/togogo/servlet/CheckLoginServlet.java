@@ -21,7 +21,7 @@ public class CheckLoginServlet extends HttpServlet {
         resp.setContentType("text/html");
         String name = req.getParameter("name");
         String password = req.getParameter("password");
-        System.out.println(name+password);
+        System.out.println(name + password);
         if (new CheckServiceImpl().checkLogin(null, name, password)) {
             /**
              * 请求转发的方式，前台jsp需要经过身份认证，不允许直接访问(也不允许重定向)
@@ -37,10 +37,14 @@ public class CheckLoginServlet extends HttpServlet {
                 e.printStackTrace();
             }
         } else {
-            resp.sendRedirect("loginFailed.jsp");
+
+            resp.getWriter().write("<p>密码错误，2s后返回上级页面</p>");
+            resp.getWriter().write("<script language=javascript>function goback(){history.go(-1);}</script>");
+            resp.getWriter().write("<script language=javascript>setTimeout(\"goback()\", 2000);" +
+                    "</script>");
+            resp.getWriter().flush();
         }
     }
-
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         doPost(req, resp);
     }

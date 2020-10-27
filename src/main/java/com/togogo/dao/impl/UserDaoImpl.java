@@ -69,6 +69,30 @@ public class UserDaoImpl implements IUserDao {
     }
 
     @Override
+    public Boolean isExistsUserName(String user_name) {
+        try (Connection con = HikariDataSourceUtil.getConnection()) {
+            String sql =
+                    "select count(`user_name`) as `number` from user where `user_name`=?";
+            PreparedStatement p = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            p.setObject(1, user_name);
+            try (ResultSet res = p.executeQuery()) {
+                if (res.next()&&res.getInt(1) == 0) {
+                    return false;
+                } else
+                {
+                    return true;
+                }
+
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return true;
+        }
+    }
+
+    @Override
     public Boolean updateUser(Integer user_id, String user_name, String user_password) {
         try (Connection con = HikariDataSourceUtil.getConnection()) {
             String sql;

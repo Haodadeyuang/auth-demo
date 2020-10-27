@@ -33,6 +33,7 @@ public class CheckRegisterServlet extends HttpServlet {
             resp.sendRedirect("signin.jsp");
         } else {
             //注册失败，返回注册界面
+
             resp.sendRedirect("signup.jsp");
         }
     }
