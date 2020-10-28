@@ -630,10 +630,6 @@
         var b2 = checkRetype();
         var b3 = check_username($("#regName").val());
         var b = b1 && b2 && b3;
-        if(b==true)
-        {
-            alert("注册成功，请登录");
-        }
         return b;
     }
 

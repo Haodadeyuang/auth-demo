@@ -4,7 +4,7 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
-    <!-- 对非保护目录下的jsp文件进行后缀隐藏,视为Servlet -->
+    <!-- 对非保护目录下的jsp文件进行后缀隐藏,实现效果与伪静态一致 -->
     <servlet>
         <servlet-name>IndexServlet</servlet-name>
         <jsp-file>/index.jsp</jsp-file>
@@ -14,7 +14,19 @@
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
 
-    <!-- jsp文件配置-->
 
+    <servlet>
+        <servlet-name>Table</servlet-name>
+        <jsp-file>/WEB-INF/a.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Table</servlet-name>
+        <url-pattern>/a.jsp</url-pattern>
+    </servlet-mapping>
+
+
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
 
 </web-app>
