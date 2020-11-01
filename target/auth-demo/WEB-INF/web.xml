@@ -14,16 +14,42 @@
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
 
+    <!-- WEB-INF目录下可通过内联框架访问-->
+    <servlet>
+        <servlet-name>DashBoard</servlet-name>
+        <jsp-file>/WEB-INF/dashboard.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DashBoard</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Profile</servlet-name>
+        <jsp-file>/WEB-INF/profile.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Profile</servlet-name>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>Table</servlet-name>
-        <jsp-file>/WEB-INF/a.jsp</jsp-file>
+        <jsp-file>/WEB-INF/table.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>Table</servlet-name>
-        <url-pattern>/a.jsp</url-pattern>
+        <url-pattern>/tables</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Article</servlet-name>
+        <jsp-file>/WEB-INF/articles.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Article</servlet-name>
+        <url-pattern>/articles</url-pattern>
+    </servlet-mapping>
 
     <session-config>
         <session-timeout>15</session-timeout>
