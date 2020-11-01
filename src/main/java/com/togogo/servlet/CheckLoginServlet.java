@@ -16,7 +16,7 @@ import java.io.IOException;
  * @author: Haodadeyu
  * @time: 2020/10/23 21:06
  */
-@WebServlet(urlPatterns = "/checkLogin")
+@WebServlet(urlPatterns = "/auth")
 public class CheckLoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html");

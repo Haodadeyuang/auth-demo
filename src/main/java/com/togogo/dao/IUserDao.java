@@ -1,14 +1,18 @@
 package com.togogo.dao;
 
-import com.togogo.domain.User;
-
-import java.util.List;
 
 public interface IUserDao {
     /**
      * 查询用户，只能根据ID或者用户名其中之一再加上密码的形式
      */
-    boolean findUser(Integer user_id, String user_name, String user_password);
+    Boolean findUser(Integer user_id, String user_name, String user_password);
+
+    /**
+     * 找到用户ID
+     * @param user_name
+     * @return
+     */
+    Integer getUserId(String user_name);
 
     /**
      * 添加用户

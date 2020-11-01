@@ -1,11 +1,11 @@
 package com.togogo.domain;
-
+import java.io.Serializable;
 /**
  * @description:
  * @author: Haodadeyu
  * @time: 2020/10/25 10:08
  */
-public class CityInfo {
+public class CityInfo implements Serializable{
     private String city_name;
     private Integer city_code;
     private String city_province;

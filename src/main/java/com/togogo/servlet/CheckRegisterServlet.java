@@ -27,7 +27,6 @@ public class CheckRegisterServlet extends HttpServlet {
              * 请求转发的方式，前台jsp需要经过身份认证，不允许直接访问(也不允许重定向)
              * 身份认证成功，在这里获取一些基本信息存入session后再进行请求转发
              * 例如用户城市代码
-             * 注意：绝对不允许把User类的字段存入session
              */
             resp.sendRedirect("signin.jsp");
         } else {

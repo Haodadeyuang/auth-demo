@@ -19,7 +19,7 @@ import java.util.List;
 public class UserDaoImpl implements IUserDao {
 
     @Override
-    public boolean findUser(Integer user_id, String user_name, String user_password) {
+    public Boolean findUser(Integer user_id, String user_name, String user_password) {
         try (Connection con = HikariDataSourceUtil.getConnection()) {
             String sql =
                     "select user_id from user where (user_id=? or user_name=?) and " +
@@ -41,6 +41,26 @@ public class UserDaoImpl implements IUserDao {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             return false;
+        }
+    }
+
+    @Override
+    public Integer getUserId(String user_name) {
+        try (Connection con = HikariDataSourceUtil.getConnection()) {
+            String sql =
+                    "select user_id from user where user_name=?";
+            PreparedStatement p = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            p.setObject(1, user_name);
+
+            try (ResultSet res = p.executeQuery()) {
+                res.next();
+                return res.getInt(1);
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return null;
         }
     }
 

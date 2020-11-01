@@ -1,7 +1,7 @@
 package com.togogo.dao.impl;
 
 import com.mysql.cj.xdevapi.JsonArray;
-import com.togogo.dao.ICityInfoDAO;
+import com.togogo.dao.ICityInfoDao;
 import com.togogo.util.HikariDataSourceUtil;
 import com.togogo.util.JsonAnalysisUtil;
 import org.json.JSONArray;
@@ -17,7 +17,7 @@ import java.util.List;
  * @author: Haodadeyu
  * @time: 2020/10/25 10:14
  */
-public class CityInfoDaoImpl implements ICityInfoDAO {
+public class CityInfoDaoImpl implements ICityInfoDao {
 
     @Override
     public List<String> getAllCityInfo() {

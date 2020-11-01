@@ -65,7 +65,7 @@
             </div><!-- col-sm-7 -->
 
             <div class="col-md-5">
-                <form method="post" action="/checkLogin">
+                <form method="post" action="/auth">
                     <h4 class="nomargin">Sign In</h4>
                     <p class="mt5 mb20">Login to access your account.</p>
                     <input type="text" name="name" autocomplete="off"

@@ -2,7 +2,7 @@ package com.togogo.dao;
 
 import java.util.List;
 
-public interface ICityInfoDAO {
+public interface ICityInfoDao {
     /**
      * 获取全部城市名
      */

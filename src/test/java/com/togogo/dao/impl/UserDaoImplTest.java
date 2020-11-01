@@ -26,4 +26,9 @@ class UserDaoImplTest {
     void existsUserName() {
         System.out.println(new UserDaoImpl().isExistsUserName("我爱米饭"));
     }
+
+    @Test
+    void testFindUser() {
+        System.out.println(new UserDaoImpl().getUserId("aa"));
+    }
 }

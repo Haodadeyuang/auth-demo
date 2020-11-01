@@ -17,5 +17,6 @@ class MemoryListenerTest {
 
     @Test
     void sessionDestroyed() {
+        System.out.println((11+3*8)/4%3);
     }
 }
