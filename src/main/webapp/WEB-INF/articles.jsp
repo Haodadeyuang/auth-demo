@@ -54,7 +54,6 @@
 
                 <form name="UserInfoForm" action="/createArticle" method="post"
                       class="form-horizontal form-bordered">
-
                     <div class="form-group">
                         <label class="col-sm-3 control-label">文章标题</label>
                         <div class="col-sm-6">
@@ -73,27 +72,14 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">文章大纲</label>
                         <div class="input-group mb10">
-                            <input type="text" width="70px" class="form-control" />
                             <span class="input-group-btn">
                     <button type="button" class="btn btn-default">提交博客</button>
-                               <p>
-                                   <button type="button" class="btn btn-primary btn-sm btn-block">默认小的块级按钮</button>
-                               </p>>
                             </span>
                         </div>
                     </div>
-
-
-
-
-
                 </form>
-
-
             </div>
-
         </div><!-- contentpanel -->
-
     </div>
 </section>
 

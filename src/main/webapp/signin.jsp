@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="resources/images/favicon.png" type="image/png">
 
-    <title>Bracket Responsive Bootstrap3 Admin</title>
+    <title>Dayu</title>
 
     <link href="resources/css/style.default.css" rel="stylesheet">
 
@@ -41,12 +41,12 @@
 
                 <div class="signin-info">
                     <div class="logopanel">
-                        <h1><span>[</span> bracket <span>]</span></h1>
+                        <h1><span>[</span> Dayu <span>]</span></h1>
                     </div><!-- logopanel -->
 
                     <div class="mb20"></div>
 
-                    <h5><strong>Welcome to My Blog!</strong></h5>
+                    <h5><strong>欢迎使用大鱼博客!</strong></h5>
                     <ul>
                         <li><i class="fa fa-arrow-circle-o-right mr5"></i> 基于html5
                             跟css的前端页面
@@ -59,15 +59,15 @@
                         </li>
                     </ul>
                     <div class="mb20"></div>
-                    <strong>Not a member? <a href="signup.jsp">Sign Up</a></strong>
+                    <strong>还没有账号? <a href="signup.jsp">立刻注册</a></strong>
                 </div><!-- signin0-info -->
 
             </div><!-- col-sm-7 -->
 
             <div class="col-md-5">
                 <form method="post" action="/auth">
-                    <h4 class="nomargin">Sign In</h4>
-                    <p class="mt5 mb20">Login to access your account.</p>
+
+                    <p class="mt5 mb20">进行后续操作需要您先认证身份</p>
                     <input type="text" name="name" autocomplete="off"
                            class="form-control uname"
                            placeholder="Username"/>
@@ -75,7 +75,7 @@
                            class="form-control pword"
                            placeholder="Password"/>
                     <!-- <a href=""><small>Forgot Your Password?</small></a> -->
-                    <button class="btn btn-success btn-block">Sign In</button>
+                    <button class="btn btn-success btn-block">登录</button>
                 </form>
             </div><!-- col-sm-5 -->
         </div><!-- row -->

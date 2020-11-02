@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../resources/images/favicon.png" type="image/png">
 
-    <title>大鱼Blog</title>
+    <title>Dayu</title>
 
     <link href="../resources/css/style.default.css" rel="stylesheet">
     <link href="../resources/css/jquery.gritter.css" rel="stylesheet">

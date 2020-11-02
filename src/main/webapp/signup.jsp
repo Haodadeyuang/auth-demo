@@ -16,7 +16,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="resources/images/favicon.png" type="image/png">
 
-    <title>Bracket Responsive Bootstrap3 Admin</title>
+    <title>Dayu</title>
 
     <link href="resources/css/style.default.css" rel="stylesheet">
 
@@ -65,9 +65,8 @@
                     </div>
 
                     <h4 class="mb20">以及更多功能将会在后续版本中推出</h4>
-                    <p class="mt5 mb20">Already a member? <a
-                            href="signin.jsp"><strong>Sign
-                        In</strong></a></p>
+                    <p class="mt5 mb20">已经拥有帐号了? <a
+                            href="signin.jsp"><strong>立刻注册</strong></a></p>
                 </div><!-- signup-info -->
 
             </div><!-- col-sm-6 -->
@@ -80,35 +79,36 @@
                          style="visibility:hidden;">
                         用户名<strong>已存在或含有敏感词汇</strong>，请重新选择其它用户名。
                     </div>
-                    <label class="control-label">Name</label>
+                    <label class="control-label">姓氏名字</label>
                     <div class="row mb10">
                         <div class="col-sm-6">
                             <input type="text" name="firstname" class="form-control"
-                                   placeholder="Firstname"/>
+                                   placeholder="姓氏"/>
                         </div>
                         <div class="col-sm-6">
                             <input type="text" name="lastname" class="form-control"
-                                   placeholder="Lastname"/>
+                                   placeholder="名字"/>
                         </div>
                     </div>
 
                     <div class="mb10">
-                        <label class="control-label">Username</label>
+                        <label class="control-label">用户名</label>
                         <input name="name" id="regName" type="text" autocomplete="off"
                                onblur="checkUserName()" class="form-control"/>
                     </div>
 
                     <div class="mb10">
-                        <label class="control-label">Password</label>
+                        <label class="control-label">密码</label>
                         <input id="regPassword" name="password" type="password"
                                autocomplete="off"
                                class="form-control"/>
                     </div>
 
                     <div class="mb10">
-                        <label class="control-label">Retype Password</label>
+                        <label class="control-label">重复密码</label>
                         <input id="regPasswordRetype" name="passwordRetype"
                                type="password"
+                               placeholder="请再重复输入一次您的密码"
                                onblur="checkRetype()"
                                autocomplete="off"
                                class="form-control"/>
@@ -117,14 +117,14 @@
 
 
                     <div class="mb10">
-                        <label class="control-label">Email Address</label>
+                        <label class="control-label">邮箱地址</label>
                         <input id="regEmail" value="" name="email" type="text"
                                autocomplete="off"
                                onblur="check_email(this.value)" class="form-control"/>
                     </div>
 
                     <div class="mb10">
-                        <label class="control-label">Location</label>
+                        <label class="control-label">所在省市</label>
                         <select name="address" class="select2-2"
                                 data-placeholder="所在地">
                             <option value=""></option>
@@ -579,7 +579,7 @@
                     </div>
                     <br/>
 
-                    <button class="btn btn-success btn-block">Sign Up</button>
+                    <button class="btn btn-success btn-block">立刻注册</button>
                 </form>
             </div><!-- col-sm-6 -->
 
