@@ -52,48 +52,39 @@
                     <p>一篇文章的标题跟正文是不可或缺的，排版等格式问题可以根据您个人习惯进行。</p>
                 </div>
 
-                <form name="UserInfoForm" action="/createArticle" method="post"
+                <form name="ArticleForm" action="/createArticle" method="post"
                       class="form-horizontal form-bordered">
-
                     <div class="form-group">
                         <label class="col-sm-3 control-label">文章标题</label>
                         <div class="col-sm-6">
                             <input type="text"
-                                   name="user_mailbox" placeholder=""
+                                   name="article_title" placeholder=""
                                    value=""
                                    class="form-control" />
                         </div>
                     </div>
+
                     <div class="form-group">
 
                         <div class="panel-body">
-                            <textarea id="wysiwyg" placeholder="Enter text here..." class="form-control" rows="10"></textarea>
+                            <textarea name="article_content" id="wysiwyg"
+                                      placeholder="Enter text here..."
+                                      class="form-control" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">文章大纲</label>
-                        <div class="input-group mb10">
-                            <input type="text" width="70px" class="form-control" />
-                            <span class="input-group-btn">
-                    <button type="button" class="btn btn-default">提交博客</button>
-                               <p>
-                                   <button type="button" class="btn btn-primary btn-sm btn-block">默认小的块级按钮</button>
-                               </p>>
-                            </span>
-                        </div>
+                        <label class="col-sm-3 control-label">
+
+                        </label>
+                        <div>
+                        <button type="button" onclick="submitArticleForm()"
+                                class="btn btn-default">提交博客
+                        </button>
                     </div>
-
-
-
-
-
                 </form>
 
-
             </div>
-
         </div><!-- contentpanel -->
-
     </div>
 </section>
 
@@ -117,6 +108,11 @@
 <script src="../resources/js/custom.js"></script>
 
 <script>
+    function submitArticleForm()
+    {
+        document.forms["ArticleForm"].submit();
+    }
+
     jQuery(document).ready(function(){
 
         "use strict";
