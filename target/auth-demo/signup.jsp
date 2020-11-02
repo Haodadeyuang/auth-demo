@@ -38,40 +38,36 @@
                 <div class="signup-info">
 
                     <div class="logopanel">
-                        <h3 class="nomargin">Sign Up</h3>
-                        <p class="mt5 mb20">Already a member? <a
-                                href="signin.jsp"><strong>Sign
-                            In</strong></a></p>
-                        <h1><span>[</span> bracket <span>]</span></h1>
+                        <h1><span>[</span> Dayu <span>]</span></h1>
                     </div><!-- logopanel -->
 
                     <div class="mb20"></div>
-
-                    <h5><strong>Bootstrap 3 Admin Template!</strong></h5>
-                    <p>Dayu Blog是一个个人博客应用系统，后续版本会更新好友系统与私信系统.</p>
-                    <p>.</p>
+                    <p>现在就注册加入Dayu博客系统吧.</p>
+                    <p>我们会提供：</p>
                     <div class="mb20"></div>
 
                     <div class="feat-list">
                         <i class="fa fa-wrench"></i>
-                        <h4 class="text-success">Easy to Customize</h4>
-                        <p>.</p>
+                        <h4 class="text-success">个人展示</h4>
+                        <p>您可以随时将您的自我介绍展示给别人，以此寻找志同道合的朋友</p>
                     </div>
 
                     <div class="feat-list">
                         <i class="fa fa-compress"></i>
-                        <h4 class="text-success"></h4>
-                        <p>.</p>
+                        <h4 class="text-success">博客管理</h4>
+                        <p>每一篇由您精心编写的博客都可供网络上其它人浏览，让更多人听到您的声音</p>
                     </div>
 
                     <div class="feat-list mb20">
                         <i class="fa fa-search-plus"></i>
-                        <h4 class="text-success">Retina Ready</h4>
-                        <p>.</p>
+                        <h4 class="text-success">好友交互</h4>
+                        <p>以双向关注为基础的好友交互系统</p>
                     </div>
 
-                    <h4 class="mb20">and much more...</h4>
-
+                    <h4 class="mb20">以及更多功能将会在后续版本中推出</h4>
+                    <p class="mt5 mb20">Already a member? <a
+                            href="signin.jsp"><strong>Sign
+                        In</strong></a></p>
                 </div><!-- signup-info -->
 
             </div><!-- col-sm-6 -->
@@ -592,11 +588,11 @@
 
         <div class="signup-footer">
             <div class="pull-left">
-                &copy; 2014. All Rights Reserved. Bracket Bootstrap 3 Admin Template
+
             </div>
             <div class="pull-right">
-                Created By: <a href="http://themepixels.com/"
-                               target="_blank">ThemePixels</a>
+                Github链接: <a href="https://github.com/Haodadeyuang/auth-demo"
+                             target="_blank">My Blog</a>
             </div>
         </div>
 
@@ -617,7 +613,7 @@
 
     function verityForm() {
         var email = $("#regEmail").val();
-        var b1 = is_Email(email);
+        var b1 = check_email(email);
         var b2 = checkRetype();
         var b3 = check_username($("#regName").val());
         var b = b1 && b2 && b3;
@@ -631,6 +627,7 @@
             alert("两次输入的密码不一致啵");
             return false;
         }
+        return true;
     }
 
     function is_Email(str) {
@@ -640,9 +637,10 @@
 
     function check_username(name) {
         if (name.length >= 10) {
-            alert("名字太长躲在树后边会变发现噢")
+            alert("名字太长躲在树后边会被发现噢")
             return false;
         }
+        return true;
     }
 
     function check_email(email) {
@@ -653,10 +651,12 @@
                 alert("邮箱名过长...");
                 return false;
             }
+            return true;
         } else {
             alert("邮箱格式非法，请重新输入");
             return false;
         }
+
     }
 
     var xmlhttp;
