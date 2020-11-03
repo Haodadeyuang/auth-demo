@@ -685,7 +685,7 @@
     function callback() {
         //请求完成表示
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            if (xmlhttp.responseText == "用户名已存在或含有敏感词汇，请更换用户名") {//这里直接判断不为空,应该根据数据库返回值来进行不同的显示
+            if (xmlhttp.responseText == "用户名已存在或含有敏感词汇，请更换用户名") {
                 $("#myAlert").attr("style", "visibility:visible;");
                 setTimeout("setHidden()", 2500);
             }
