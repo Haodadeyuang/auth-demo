@@ -80,6 +80,7 @@
                         <button type="button" onclick="submitArticleForm()"
                                 class="btn btn-default">提交博客
                         </button>
+                        </div>
                     </div>
                 </form>
 

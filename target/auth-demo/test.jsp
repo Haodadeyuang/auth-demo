@@ -2,7 +2,10 @@
 <%@ page import="com.togogo.domain.UserInfo" %>
 <%@ page import="com.togogo.dao.impl.UserInfoDaoImpl" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.togogo.domain.Article" %>
+<%@ page import="com.togogo.dao.impl.ArticleDaoImpl" %>
+<%@ page import="com.togogo.dao.impl.UserDaoImpl" %><%--
   Created by IntelliJ IDEA.
   User: Haodadeyu
   Date: 2020/10/29
@@ -17,30 +20,42 @@
 </head>
 <body>
 
-<%
-    for(int i=0; i<6; i++){
-        if(i%2==1)
+
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>文章标题</th>
+        <th>文章发表时间</th>
+        <th>点击数</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%
+        Integer author_id = new UserDaoImpl().getUserId((String)
+                (request.getSession()).getAttribute(
+                "UserName"));
+        List<Article> Tables=new ArticleDaoImpl().getUserArticles(author_id);
+        int i=0;
+        for(Article Ae:Tables)
         {
-%>
-
-<div class="media">
-    <a class="pull-left" href="#">
-        <img class="media-object" src="../resources/holder.js/100x125.html" alt="" />
-    </a>
-    <div class="media-body">
-        <h3 class="follower-name">Ray Sin</h3>
-        <div class="profile-location"><i class="fa fa-map-marker"></i> San Francisco, California, USA</div>
-        <div class="profile-position"><i class="fa fa-briefcase"></i> Software Engineer at <a href="">SomeCompany, Inc.</a></div>
-
-        <div class="mb20"></div>
-
-        <button class="btn btn-sm btn-success mr5"><i class="fa fa-user"></i> Follow</button>
-        <button class="btn btn-sm btn-white"><i class="fa fa-envelope-o"></i> Message</button>
-    </div>
-</div><!-- media -->
+    %>
+    <tr>
+        <td><%=++i%></td>
+        <td><%=Ae.getArticle_title()%></td>
+        <td><%=Ae.getArticle_createtime()%></td>
+        <td><%=Ae.getArticle_viewcount()%></td>
+        <td class="table-action">
+            <a href=""><i class="fa fa-pencil"></i></a>
+            <a href="" class="delete-row"><i class="fa fa-trash-o"></i></a>
+        </td>
+    </tr>
+    <%}%>
+    </tbody>
+</table>
 
 
-<%}}%>
 
 </body>
 </html>
