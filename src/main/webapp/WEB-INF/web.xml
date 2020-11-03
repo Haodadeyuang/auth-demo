@@ -51,6 +51,24 @@
         <url-pattern>/articles</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>BlogList</servlet-name>
+        <jsp-file>/WEB-INF/bloglist.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BlogList</servlet-name>
+        <url-pattern>/blogs</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BlogPage</servlet-name>
+        <jsp-file>/WEB-INF/blogpage.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BlogPage</servlet-name>
+        <url-pattern>/blog</url-pattern>
+    </servlet-mapping>
+
     <session-config>
         <session-timeout>15</session-timeout>
     </session-config>

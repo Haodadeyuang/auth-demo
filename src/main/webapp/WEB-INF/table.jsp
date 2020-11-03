@@ -620,7 +620,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3">
                         <button class="btn btn-primary" onclick="submitUserInfoForm()">Submit</button>&nbsp;
-                        <button class="btn btn-default">Cancel</button>
+
                     </div>
                 </div>
             </div><!-- panel-footer -->

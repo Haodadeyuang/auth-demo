@@ -32,5 +32,11 @@ class ArticleDaoImplTest {
 
     @Test
     void deleteArticle() {
+        System.out.println(new ArticleDaoImpl().deleteArticle(7));
+    }
+
+    @Test
+    void getArticleUserID() {
+        System.out.println(new ArticleDaoImpl().getArticleUserID(1));
     }
 }
