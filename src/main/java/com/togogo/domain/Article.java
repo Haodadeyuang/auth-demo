@@ -1,7 +1,7 @@
 package com.togogo.domain;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Timestamp;
 
 /**
  * @description:
@@ -12,9 +12,21 @@ public class Article implements Serializable {
     private Integer article_id;
     private Integer author_id;
     private Integer article_viewcount;
-    private Date article_createtime;
+    private Timestamp article_createtime;
     private String article_title;
     private String article_content;
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "article_id=" + article_id +
+                ", author_id=" + author_id +
+                ", article_viewcount=" + article_viewcount +
+                ", article_createtime=" + article_createtime +
+                ", article_title='" + article_title + '\'' +
+                ", article_content='" + article_content + '\'' +
+                '}';
+    }
 
     public Integer getArticle_id() {
         return article_id;
@@ -40,11 +52,11 @@ public class Article implements Serializable {
         this.article_viewcount = article_viewcount;
     }
 
-    public Date getArticle_createtime() {
+    public Timestamp getArticle_createtime() {
         return article_createtime;
     }
 
-    public void setArticle_createtime(Date article_createtime) {
+    public void setArticle_createtime(Timestamp article_createtime) {
         this.article_createtime = article_createtime;
     }
 
