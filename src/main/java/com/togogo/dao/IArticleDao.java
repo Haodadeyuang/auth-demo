@@ -16,6 +16,13 @@ public interface IArticleDao {
     List<Article> getUserArticles(Integer user_id);
 
     /**
+     * 查找文章作者
+     * @param article_id
+     * @return
+     */
+    Integer getArticleUserID(Integer article_id);
+
+    /**
      * 创建新文章
      * @param article
      * @return
@@ -27,7 +34,7 @@ public interface IArticleDao {
      * @param article_id
      * @return
      */
-    Boolean selectArticle(Integer article_id);
+    Article selectArticle(Integer article_id);
     /**
      * 更新文章标题或内容
      * @param article
