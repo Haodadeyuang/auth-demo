@@ -66,7 +66,7 @@
 
                     <h4 class="mb20">以及更多功能将会在后续版本中推出</h4>
                     <p class="mt5 mb20">已经拥有帐号了? <a
-                            href="signin.jsp"><strong>立刻注册</strong></a></p>
+                            href="signin.jsp"><strong>立刻登录</strong></a></p>
                 </div><!-- signup-info -->
 
             </div><!-- col-sm-6 -->
@@ -685,7 +685,7 @@
     function callback() {
         //请求完成表示
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            if (xmlhttp.responseText == "用户名已存在或含有敏感词汇，请更换用户名") {//这里直接判断不为空,应该根据数据库返回值来进行不同的显示
+            if (xmlhttp.responseText == "用户名已存在或含有敏感词汇，请更换用户名") {
                 $("#myAlert").attr("style", "visibility:visible;");
                 setTimeout("setHidden()", 2500);
             }
