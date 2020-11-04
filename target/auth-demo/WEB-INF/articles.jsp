@@ -65,7 +65,6 @@
                     </div>
 
                     <div class="form-group">
-
                         <div class="panel-body">
                             <textarea name="article_content" id="wysiwyg"
                                       placeholder="Enter text here..."
@@ -73,14 +72,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">
-
-                        </label>
-                        <div>
+                        <p>
                         <button type="button" onclick="submitArticleForm()"
-                                class="btn btn-default">提交博客
+                                class="btn btn-default btn-block">提交博客
                         </button>
-                        </div>
+                        </p>
                     </div>
                 </form>
 

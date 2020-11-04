@@ -68,6 +68,15 @@
         <servlet-name>BlogPage</servlet-name>
         <url-pattern>/blog</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>EditPage</servlet-name>
+        <jsp-file>/WEB-INF/editpage.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditPage</servlet-name>
+        <url-pattern>/editpage</url-pattern>
+    </servlet-mapping>
 
     <session-config>
         <session-timeout>15</session-timeout>
