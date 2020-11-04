@@ -82,14 +82,15 @@
                 <ul class="headermenu">
 
                     <li>
-                        <form action="/search" method="post">
+                        <form name="SearchForm" target="authIframe" action="/search"
+                        method="post">
                                 <input type="text" formtarget="authIframe" class="form-control"
-                                       placeholder="查找用户"
+                                       name="searchword" placeholder="查找用户"
                                        style="width: 150px"/>
                         </form>
                     </li>
                     <li>
-                        <button class="btn btn-default">Search</button>
+                        <button class="btn btn-default" onclick="submitSearchForm()">Search</button>
                     </li>
                 </ul>
             </div>
@@ -100,7 +101,7 @@
                         <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle"
                                     data-toggle="dropdown">
-                                <img src="../resources/images/photos/loggeduser.png" alt=""/>
+                                <img src="../resources/images/photos/userhead.jpg" alt=""/>
                                 <%=session.getAttribute("UserName")%>
                                 <span class="caret"></span>
                             </button>
@@ -132,6 +133,12 @@
 
 
 </section>
+<script>
+    function submitSearchForm()
+    {
+        document.forms["SearchForm"].submit();
+    }
+</script>
 <script src="../resources/js/jquery-1.11.1.min.js"></script>
 <script src="../resources/js/jquery-migrate-1.2.1.min.js"></script>
 <script src="../resources/js/jquery-ui-1.10.3.min.js"></script>
