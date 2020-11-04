@@ -78,6 +78,23 @@
         <url-pattern>/editpage</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SearchResult</servlet-name>
+        <jsp-file>/WEB-INF/searchresult.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchResult</servlet-name>
+        <url-pattern>/searchresult</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>NotFound</servlet-name>
+        <jsp-file>/WEB-INF/404.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NotFound</servlet-name>
+        <url-pattern>/notfound</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>15</session-timeout>
     </session-config>
