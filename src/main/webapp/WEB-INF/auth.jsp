@@ -78,7 +78,21 @@
     <div class="mainpanel">
 
         <div class="headerbar">
+            <div class="header-left">
+                <ul class="headermenu">
 
+                    <li>
+                        <form action="/search" method="post">
+                                <input type="text" formtarget="authIframe" class="form-control"
+                                       placeholder="查找用户"
+                                       style="width: 150px"/>
+                        </form>
+                    </li>
+                    <li>
+                        <button class="btn btn-default">Search</button>
+                    </li>
+                </ul>
+            </div>
             <div class="header-right">
                 <ul class="headermenu">
 

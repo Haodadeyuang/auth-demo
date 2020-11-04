@@ -1,6 +1,7 @@
 <%@ page import="com.togogo.domain.Article" %>
 <%@ page import="com.togogo.dao.impl.ArticleDaoImpl" %>
-<%@ page import="com.togogo.dao.impl.UserDaoImpl" %><%--
+<%@ page import="com.togogo.dao.impl.UserDaoImpl" %>
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: Haodadeyu
   Date: 2020/11/3
@@ -37,14 +38,13 @@
     <div class="mainpanel">
         <div class="headerbar"></div>
         <div class="pageheader">
-            <h2><i class="fa fa-file-text"></i> Blog Single
-                <span>Read our latest news...</span></h2>
+            <h2><i class="fa fa-file-text"></i> Blog
+                <span></span></h2>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Bracket</a></li>
-                    <li><a href="index.html">Pages</a></li>
-                    <li class="active">Blog Single</li>
+                    <li><a href="/blogs">BlogList</a></li>
+                    <li class="active">Blog</li>
                 </ol>
             </div>
         </div>
@@ -52,14 +52,16 @@
             <div class="panel panel-default panel-blog">
                 <div class="panel-body">
                     <%
-                        Article ar = new ArticleDaoImpl().selectArticle(
-                                Integer.valueOf(request.getParameter("article_id")));
+                        Integer
+                                article_id=Integer.valueOf(request.getParameter("article_id"));
+                        Article ar = new ArticleDaoImpl().selectArticle(article_id);
+                        new ArticleDaoImpl().addViewcount(article_id);
                     %>
                     <h3 class="blogsingle-title"><%=ar.getArticle_title()%></h3>
                     <ul class="blog-meta">
                         <li>By: <a href=""><%=ar.getAuthor_id()%></a></li>
-                        <li><%=ar.getArticle_viewcount()%></li>
-                        <li><%=ar.getArticle_createtime()%></li>
+                        <li><%=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(ar.getArticle_createtime())%></li>
+                        <li>访问次数：<%=ar.getArticle_viewcount()%></li>
                     </ul>
                     <br/>
                     <div class="mb20"></div>

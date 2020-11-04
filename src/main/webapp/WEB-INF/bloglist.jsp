@@ -1,7 +1,8 @@
 <%@ page import="com.togogo.dao.impl.UserDaoImpl" %>
 <%@ page import="com.togogo.domain.Article" %>
 <%@ page import="com.togogo.dao.impl.ArticleDaoImpl" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: Haodadeyu
   Date: 2020/11/3
@@ -85,15 +86,20 @@
                         %>
                         <tr>
                             <td><%=++i%></td>
-                            <td><%=Ae.getArticle_title()%></td>
-                            <td><%=Ae.getArticle_createtime()%></td>
+                            <td><a href="/blog?article_id=<%=Ae.getArticle_id()%>">
+                                <p><%=Ae.getArticle_title()%></p>
+                            </a></td>
+                            <td><%=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Ae.getArticle_createtime())%></td>
                             <td><%=Ae.getArticle_viewcount()%></td>
                             <td class="table-action">
-                                <a
-                                        href="/blog?article_id=<%=Ae.getArticle_id()%>"><i
-                                        class="fa fa-pencil"></i></a>
+                                <a href="/editpage?article_id=<%=Ae.getArticle_id()%>">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
                                 <a href="/deleteArticle?article_id=<%=Ae.getArticle_id()%>"
-                                   class="delete-row"><i class="fa fa-trash-o"></i></a>
+                                   class="delete-row">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+
                             </td>
                         </tr>
                         <%}%>
@@ -144,18 +150,6 @@
         jQuery('select').removeClass('form-control');
 
         // Delete row in a table
-        jQuery('.delete-row').click(function(){
-            var c = confirm("Continue delete?");
-            if(c)
-                jQuery(this).closest('tr').fadeOut(function(){
-                    jQuery(this).remove();
-                    return true;
-                });
-
-            return false;
-        });
-
-
 
     });
 </script>
