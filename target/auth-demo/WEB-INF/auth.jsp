@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../resources/images/favicon.png" type="image/png">
 
-    <title>Dayu</title>
+    <title>Auth</title>
 
     <link href="../resources/css/style.default.css" rel="stylesheet">
     <link href="../resources/css/jquery.gritter.css" rel="stylesheet">
@@ -50,12 +50,6 @@
                     <span>仪表盘</span>
                     </a>
                 </li>
-
-                <li><a href="/emails" target="authIframe">
-                    <span class="pull-right badge badge-success">2</span>
-                    <i class="fa fa-envelope-o"></i>
-                    <span>我的邮箱</span>
-                </a></li>
 
                 <li><a href="/tables" target="authIframe"><i class="fa fa-th-list"></i>
                     <span>个人信息</span></a>

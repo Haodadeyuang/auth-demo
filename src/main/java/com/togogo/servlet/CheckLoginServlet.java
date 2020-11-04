@@ -22,7 +22,6 @@ public class CheckLoginServlet extends HttpServlet {
         resp.setContentType("text/html");
         String name = req.getParameter("name");
         String password = req.getParameter("password");
-        System.out.println(name + password);
         if (new CheckServiceImpl().checkLogin(null, name, password)) {
             /**
              * 请求转发的方式，前台jsp需要经过身份认证，不允许直接访问(也不允许重定向)

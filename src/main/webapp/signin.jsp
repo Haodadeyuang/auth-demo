@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="resources/images/favicon.png" type="image/png">
 
-    <title>Dayu</title>
+    <title>Dayu Blog</title>
 
     <link href="resources/css/style.default.css" rel="stylesheet">
 
@@ -26,17 +26,13 @@
     <![endif]-->
 </head>
 
-<body background="resources/images/photos/loginBack.jpg" class="signin">
+<body class="signin">
 
 
 <section>
 
     <div class="signinpanel">
-
         <div class="row">
-
-
-
             <div class="col-md-7">
 
                 <div class="signin-info">
@@ -49,13 +45,13 @@
                     <h5><strong>欢迎使用大鱼博客!</strong></h5>
                     <ul>
                         <li><i class="fa fa-arrow-circle-o-right mr5"></i> 基于html5
-                            跟css的前端页面
+                            跟javascript的前端平台，UI组件包括bootstrap
                         </li>
                         <li><i class="fa fa-arrow-circle-o-right mr5"></i> 基于java
-                            语言开发的后台博客管理应用
+                            web开发的后台博客管理应用
                         </li>
-                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> 中间件包括apache
-                            tomcat、redis等
+                        <li><i class="fa fa-arrow-circle-o-right mr5"></i>
+                            Web容器使用Apache Tomcat
                         </li>
                     </ul>
                     <div class="mb20"></div>

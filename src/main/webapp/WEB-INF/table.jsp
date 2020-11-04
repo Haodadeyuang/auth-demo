@@ -16,7 +16,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../resources/images/favicon.png" type="image/png">
 
-    <title>Bracket Responsive Bootstrap3 Admin</title>
+    <title>Dayu Blog</title>
 
     <link rel="stylesheet" href="../resources/css/style.default.css" />
 

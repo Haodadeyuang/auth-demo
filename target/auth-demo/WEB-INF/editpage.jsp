@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../resources/css/favicon.png" type="image/png">
-    <title>修改文章</title>
+    <title>Dayu Blog</title>
     <link href="../resources/css/style.default.css" rel="stylesheet">
     <link rel="stylesheet" href="../resources/css/bootstrap-wysihtml5.css" />
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

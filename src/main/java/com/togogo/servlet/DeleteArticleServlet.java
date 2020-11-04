@@ -2,8 +2,6 @@ package com.togogo.servlet;
 
 import com.togogo.dao.impl.ArticleDaoImpl;
 import com.togogo.dao.impl.UserDaoImpl;
-import com.togogo.service.IEditArticleService;
-import com.togogo.service.impl.EditArticleServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

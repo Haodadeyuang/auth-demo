@@ -9,12 +9,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../resources/images/favicon.png" type="image/png">
 
-    <title>个人主页</title>
+    <title>Dayu Blog</title>
 
     <link href="../resources/css/style.default.css" rel="stylesheet">
     <link href="../resources/css/prettyPhoto.css" rel="stylesheet">
@@ -28,8 +29,8 @@
 <body>
 <jsp:useBean id="userinfo" class="com.togogo.domain.UserInfo" scope="page"/>
 <%
-    String name=(String)session.getAttribute("UserName");
-    userinfo=new UserInfoDaoImpl().getUserInfo(name);
+    String name = (String) session.getAttribute("UserName");
+    userinfo = new UserInfoDaoImpl().getUserInfo(name);
 %>
 <section>
     <div class="mainpanel">
@@ -52,7 +53,7 @@
             <div class="row">
                 <div class="col-sm-3">
                     <img src="../resources/images/photos/userhead.jpg"
-                         class="thumbnail img-responsive" alt="" />
+                         class="thumbnail img-responsive" alt=""/>
 
                     <div class="mb30"></div>
 
@@ -64,42 +65,38 @@
                     <h5 class="subtitle">联系方式</h5>
                     <ul class="profile-social-list">
                         <li><i class="fa fa-twitter"></i>
-                            <a href=""><%= userinfo.getUser_mailbox() %></a></li>
+                            <a href=""><%= userinfo.getUser_mailbox() %>
+                            </a></li>
                     </ul>
-
                     <div class="mb30"></div>
-
                     <h5 class="subtitle">地址信息</h5>
                     <address>
                         <%= userinfo.getUser_city() %><br>
                         <br>
-                        <abbr title="Phone">P:</abbr> <%= userinfo.getUser_phone() %>
+                        <abbr title="Phone">Phone:</abbr> <%= userinfo.getUser_phone() %>
                     </address>
-
                 </div><!-- col-sm-3 -->
                 <div class="col-sm-9">
-
                     <div class="profile-header">
-                        <h2 class="profile-name"><%=session.getAttribute("UserName")%></h2>
+                        <h2 class="profile-name"><%=session.getAttribute("UserName")%>
+                        </h2>
                         <div class="profile-location"><i class="fa fa-map-marker"></i>
-                            <%= userinfo.getUser_location() %> </div>
+                            <%= userinfo.getUser_location() %>
+                        </div>
                         <div class="profile-position"><i class="fa fa-briefcase"></i>
                             <%= userinfo.getUser_job() %>
-                            <a href="">SomeCompany, Inc.</a></div>
-
+                            </div>
                         <div class="mb20"></div>
-
-                        <button class="btn btn-success mr5"><i class="fa fa-user"></i> Follow</button>
-                        <button class="btn btn-white"><i class="fa fa-envelope-o"></i> Message</button>
+                        <button class="btn btn-success mr5"><i class="fa fa-user"></i>
+                            Follow
+                        </button>
+                        <button class="btn btn-white"><i class="fa fa-envelope-o"></i>
+                            Message
+                        </button>
                     </div><!-- profile-header -->
-
                     <!-- Nav tabs -->
-
-
                     <!-- Tab panes -->
                     <div class="tab-content">
-
-
                     </div><!-- tab-content -->
 
                 </div><!-- col-sm-9 -->
@@ -129,7 +126,7 @@
 
 <script src="../resources/js/custom.js"></script>
 <script>
-    jQuery(document).ready(function(){
+    jQuery(document).ready(function () {
 
         jQuery("a[data-rel^='prettyPhoto']").prettyPhoto();
 

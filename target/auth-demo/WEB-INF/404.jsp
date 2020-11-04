@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../resources/images/favicon.png" type="image/png">
 
-    <title>Bracket Responsive Bootstrap3 Admin</title>
+    <title>404 NOT FOUND!</title>
 
     <link href="../resources/css/style.default.css" rel="stylesheet">
 
