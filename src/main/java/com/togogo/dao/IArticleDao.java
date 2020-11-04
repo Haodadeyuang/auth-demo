@@ -49,4 +49,11 @@ public interface IArticleDao {
      */
     Boolean deleteArticle(Integer article_id);
 
+    /**
+     * 点击次数＋1
+     * @param article_id
+     * @return
+     */
+    Boolean addViewcount(Integer article_id);
+
 }

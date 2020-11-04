@@ -116,13 +116,45 @@ public class ArticleDaoImpl implements IArticleDao {
 
     @Override
     public Boolean updateArticle(Article article) {
-        return null;
+        try (Connection con = HikariDataSourceUtil.getConnection()) {
+            Integer article_id=article.getArticle_id();
+            String article_title=article.getArticle_title();
+            String article_content=article.getArticle_content();
+            String sql = "update article set article_title=?,article_content=? where article_id=?";
+            PreparedStatement p = con.prepareStatement(sql);
+            p.setObject(1, article_title);
+            p.setObject(2,article_content);
+            p.setObject(3,article_id);
+            if (p.executeUpdate() == 1) {
+                return true;
+            }
+            return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override
     public Boolean deleteArticle(Integer article_id) {
         try (Connection con = HikariDataSourceUtil.getConnection()) {
             String sql = "delete from article where article_id=?";
+            PreparedStatement p = con.prepareStatement(sql);
+            p.setObject(1, article_id);
+            if (p.executeUpdate() == 1) {
+                return true;
+            }
+            return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public Boolean addViewcount(Integer article_id) {
+        try (Connection con = HikariDataSourceUtil.getConnection()) {
+            String sql = "update article set `article_viewcount`=`article_viewcount`+1  where article_id =?";
             PreparedStatement p = con.prepareStatement(sql);
             p.setObject(1, article_id);
             if (p.executeUpdate() == 1) {
